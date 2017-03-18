@@ -2,8 +2,10 @@ subprojects {
 // Checkstyle
     apply plugin: 'checkstyle'
     checkstyle {
+        toolVersion = "7.6"
+        configFile = rootProject.file('codequality/checkstyle.xml') as File
         ignoreFailures = true
-        configFile = rootProject.file('codequality/checkstyle.xml')
+        showViolations = true
     }
 
 // FindBugs

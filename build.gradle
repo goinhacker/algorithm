@@ -1,7 +1,4 @@
 
-// Establish version and status
-ext.githubProjectName = rootProject.name // Change if github project name is not the same as the root project's name
-
 buildscript {
     repositories {
         mavenLocal()
@@ -19,12 +16,10 @@ allprojects {
 }
 
 apply from: file('gradle/convention.gradle')
-apply from: file('gradle/maven.gradle')
 apply from: file('gradle/check.gradle')
-apply from: file('gradle/license.gradle')
 
 subprojects {
-    group = "com.netflix.${githubProjectName}" // TEMPLATE: Set to organization of project
+    group = "io.goinhacker.${rootProject.name}" // TEMPLATE: Set to organization of project
 
     dependencies {
         testCompile 'junit:junit:4.12'
